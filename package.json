@@ -1,0 +1,31 @@
+{
+  "name": "foodblog-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node -r dotenv/config --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcochippy/Foodblog-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/marcochippy/Foodblog-Backend/issues"
+  },
+  "homepage": "https://github.com/marcochippy/Foodblog-Backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.16.0",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "dotenv": "^16.5.0"
+  }
+}
