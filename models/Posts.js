@@ -24,6 +24,6 @@ const Posts = sequelize.define('Posts',{
 
     // }
 })
-// Posts.sync();
+ // Posts.sync();
 
  export default Posts;

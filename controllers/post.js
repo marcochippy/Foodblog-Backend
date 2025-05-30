@@ -1,8 +1,8 @@
-import Post from "../models/Posts.js";
+import Posts from "../models/Posts.js";
 
 const getAllPosts = async (req, res) => {
   try {
-    const posts = await Post.findAll();
+    const posts = await Posts.findAll();
     res.json(posts);
   } catch (error) {
     res.status(500).json({ error: error.message || "Internal server error." });
@@ -15,7 +15,7 @@ const createPost = async (req, res) => {
     if (!author || !title || !content || !cover)
       return res.status(400).json({ error: "Missing required fields" });
 
-    const newPost = await Post.create(req.body);
+    const newPost = await Posts.create(req.body);
 
     res.status(201).json(newPost);
   } catch (error) {
@@ -26,7 +26,7 @@ const getPostById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const post = await Post.findByPk(id);
+    const post = await Posts.findByPk(id);
 
     if (!post)
       return res.status(404).json({ error: "This post was not found" });
@@ -43,7 +43,7 @@ const updatePost = async (req, res) => {
     if (!author || !title || !content || !cover)
       return res.status(400).json({ error: "Missing required fields" });
 
-    const post = await Post.findByPk(id);
+    const post = await Posts.findByPk(id);
 
     if (!post)
       return res.status(404).json({ error: "This post was not found" });
@@ -59,7 +59,7 @@ const deletePost = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const post = await Post.findByPk(id);
+    const post = await Posts.findByPk(id);
 
     if (!post)
       return res.status(404).json({ error: "This post was not found" });
