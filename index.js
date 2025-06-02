@@ -1,10 +1,17 @@
 import express from "express";
-import { getAllPosts, createPost, getPostById, updatePost, deletePost } from "./controllers/post.js";
+import {
+  getAllPosts,
+  createPost,
+  getPostById,
+  updatePost,
+  deletePost,
+} from "./controllers/post.js";
 import "./db/index.js";
+import cors from "cors";
 
 const app = express();
-
-const port =3000;
+const port = 3000;
+app.use(cors());
 
 app.use(express.json());
 
